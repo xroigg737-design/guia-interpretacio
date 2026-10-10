@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia d'Interpretació</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0f0c29;
+            --bg-mid: #1a1a2e;
+            --bg-top: #16213e;
+            --glass: rgba(255,255,255,0.04);
+            --glass-border: rgba(255,255,255,0.08);
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a8c0;
+            --text-muted: #606880;
+            --gold: #ffaa00;
+            --gold-dim: rgba(255,170,0,0.15);
+            --gold-glow: rgba(255,170,0,0.08);
+            --practical: #e8c170;
+            --practical-bg: rgba(232,193,112,0.08);
+            --practical-border: rgba(232,193,112,0.18);
+            --accent-character: #ff8a65;
+            --accent-phrasing: #7aafff;
+            --accent-rubato: #c8a0ff;
+            --accent-dynamics: #ff6b8a;
+            --accent-pedal: #2dd4bf;
+            --accent-technique: #66cc66;
+            --accent-tips: #ffd740;
+        }
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) {
+                --bg-deep: #f5f3ee; --bg-mid: #faf8f4; --bg-top: #ffffff;
+                --glass: rgba(0,0,0,0.03); --glass-border: rgba(0,0,0,0.08);
+                --text-primary: #1a1a2e; --text-secondary: #555; --text-muted: #999;
+                --gold: #b87800; --gold-dim: rgba(184,120,0,0.1);
+                --practical: #8a6420; --practical-bg: rgba(184,120,0,0.06);
+                --practical-border: rgba(184,120,0,0.15);
+            }
+        }
+        :root[data-theme="dark"] {
+            --bg-deep: #0f0c29; --bg-mid: #1a1a2e; --bg-top: #16213e;
+            --glass: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.08);
+            --text-primary: #f0f0f0; --text-secondary: #a0a8c0; --text-muted: #606880;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 40%, var(--bg-top) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .back-btn {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.85em;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+        .back-btn:hover { opacity: 1; }
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 40%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-actions { margin-left: auto; display: flex; gap: 8px; }
+        .btn-header {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text-secondary);
+            font: 600 0.78rem/1 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-header:hover { background: rgba(255,255,255,0.08); color: var(--gold); border-color: rgba(255,170,0,0.3); }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 24px 60px;
+        }
+
+        /* Piece Hero */
+        .piece-hero {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-top: 3px solid var(--gold);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .piece-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(255,170,0,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .piece-composer {
+            font: 600 0.72rem/1 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .piece-title {
+            font: 700 1.6rem/1.2 'Crimson Pro', serif;
+            margin-bottom: 4px;
+        }
+        .piece-collection {
+            font: italic 400 1rem/1.3 'Crimson Pro', serif;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+        .piece-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .meta-tag {
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--gold-dim);
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Context block */
+        .context-block {
+            background: var(--gold-glow);
+            border: 1px solid var(--gold-dim);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            font: 400 0.9rem/1.7 'Crimson Pro', serif;
+            color: var(--text-secondary);
+        }
+        .context-block strong { color: var(--gold); font-weight: 600; }
+
+        /* Section Navigation */
+        .section-nav {
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .section-nav::-webkit-scrollbar { height: 3px; }
+        .section-nav::-webkit-scrollbar-thumb { background: rgba(255,170,0,0.3); border-radius: 3px; }
+        .nav-btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text-secondary);
+            font: 600 0.76rem/1 'Inter', sans-serif;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .nav-btn:hover { background: rgba(255,255,255,0.07); }
+        .nav-btn.active {
+            background: var(--gold-dim);
+            color: var(--gold);
+            border-color: rgba(255,170,0,0.3);
+        }
+        .nav-btn .nav-num {
+            display: inline-block;
+            width: 18px; height: 18px;
+            line-height: 18px;
+            text-align: center;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            font-size: 0.68rem;
+            margin-right: 6px;
+        }
+        .nav-btn.active .nav-num { background: rgba(255,170,0,0.2); }
+
+        /* Section content */
+        .section-panel { display: none; animation: fadeIn 0.3s ease; }
+        .section-panel.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .section-title {
+            font: 700 1.3rem/1.2 'Crimson Pro', serif;
+            color: var(--text-primary);
+        }
+        .section-measures {
+            font-size: 0.78rem;
+            padding: 3px 10px;
+            border-radius: 5px;
+            background: var(--glass);
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+        }
+        .section-markings {
+            font: italic 400 0.92rem/1 'Crimson Pro', serif;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        /* Aspect blocks */
+        .aspect {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .aspect:hover { border-color: rgba(255,255,255,0.12); }
+        .aspect-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .aspect-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .aspect-icon.character { background: rgba(255,138,101,0.15); }
+        .aspect-icon.phrasing  { background: rgba(122,175,255,0.15); }
+        .aspect-icon.rubato    { background: rgba(200,160,255,0.15); }
+        .aspect-icon.dynamics  { background: rgba(255,107,138,0.15); }
+        .aspect-icon.pedal     { background: rgba(45,212,191,0.15); }
+        .aspect-icon.technique { background: rgba(102,204,102,0.15); }
+        .aspect-icon.tips      { background: rgba(255,215,64,0.15); }
+        .aspect-name {
+            font: 600 0.82rem/1 'Inter', sans-serif;
+            flex: 1;
+        }
+        .aspect-arrow {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+        .aspect.open .aspect-arrow { transform: rotate(90deg); }
+        .aspect-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .aspect.open .aspect-body { max-height: 2000px; }
+        .aspect-content {
+            padding: 0 18px 16px;
+            font: 400 0.88rem/1.7 'Inter', sans-serif;
+            color: var(--text-secondary);
+        }
+
+        /* Practical translation spans */
+        .pract {
+            display: inline;
+            color: var(--practical);
+            font-size: 0.84em;
+            line-height: 1.6;
+        }
+        .pract::before { content: '('; }
+        .pract::after  { content: ')'; }
+
+        /* Practical block (for longer translations) */
+        .pract-block {
+            display: block;
+            margin: 8px 0;
+            padding: 10px 14px;
+            background: var(--practical-bg);
+            border: 1px solid var(--practical-border);
+            border-left: 3px solid var(--practical);
+            border-radius: 0 8px 8px 0;
+            color: var(--practical);
+            font-size: 0.84em;
+            line-height: 1.6;
+        }
+
+        .aspect-content p { margin: 8px 0; }
+        .aspect-content ul { padding-left: 20px; margin: 8px 0; }
+        .aspect-content li { margin: 4px 0; }
+        .aspect-content strong { color: var(--text-primary); }
+
+        /* Recordings */
+        .recordings {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+        .recordings h3 {
+            font: 700 0.82rem/1 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .rec-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            margin-bottom: 6px;
+            align-items: flex-start;
+        }
+        .rec-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+        .rec-info { flex: 1; }
+        .rec-artist { font-weight: 600; font-size: 0.88rem; color: var(--text-primary); }
+        .rec-album { font-size: 0.8rem; color: var(--text-secondary); }
+        .rec-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; font-style: italic; }
+
+        /* Practice Strategy */
+        .practice {
+            background: var(--gold-glow);
+            border: 1px solid var(--gold-dim);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 16px;
+        }
+        .practice h3 {
+            font: 700 0.82rem/1 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .practice ol {
+            padding-left: 24px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .practice li { margin: 6px 0; }
+        .practice li strong { color: var(--text-primary); }
+
+        /* AI Generator Panel */
+        .generator {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+        .generator h3 {
+            font: 700 0.82rem/1 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .gen-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .gen-input {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.03);
+            color: var(--text-primary);
+            font: 400 0.88rem/1 'Inter', sans-serif;
+        }
+        .gen-input:focus { outline: none; border-color: rgba(255,170,0,0.4); }
+        .gen-input::placeholder { color: var(--text-muted); }
+        .gen-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(180deg, #d4920a 0%, #a06800 100%);
+            color: #fff;
+            font: 600 0.84rem/1 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .gen-btn:hover { background: linear-gradient(180deg, #e8a420 0%, #b87800 100%); box-shadow: 0 4px 16px rgba(255,170,0,0.3); }
+        .gen-prompt-area {
+            display: none;
+            margin-top: 12px;
+        }
+        .gen-prompt-area.visible { display: block; }
+        .gen-prompt-area textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0,0,0,0.2);
+            color: var(--text-secondary);
+            font: 400 0.82rem/1.5 monospace;
+            resize: vertical;
+        }
+        .gen-prompt-area textarea:focus { outline: none; border-color: rgba(255,170,0,0.3); }
+        .gen-paste-area {
+            display: none;
+            margin-top: 12px;
+        }
+        .gen-paste-area.visible { display: block; }
+        .gen-paste-area textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: rgba(0,0,0,0.2);
+            color: var(--text-primary);
+            font: 400 0.85rem/1.6 'Inter', sans-serif;
+            resize: vertical;
+        }
+        .gen-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .gen-actions .gen-btn { font-size: 0.78rem; padding: 8px 16px; }
+
+        /* Guide selector */
+        .guide-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .guide-selector label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .guide-selector select {
+            flex: 1;
+            max-width: 400px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text-primary);
+            font: 500 0.85rem/1 'Inter', sans-serif;
+        }
+        .guide-selector select:focus { outline: none; border-color: rgba(255,170,0,0.3); }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+        .footer-version {
+            margin-top: 4px;
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Overview tab */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .overview-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+        .overview-card h4 {
+            font: 600 0.75rem/1 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .overview-card p, .overview-card ul {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .overview-card ul { padding-left: 18px; }
+        .overview-card li { margin: 3px 0; }
+
+        @media (max-width: 700px) {
+            header { padding: 16px 16px 0; flex-wrap: wrap; }
+            header h1 { font-size: 1.2rem; }
+            .container { padding: 16px 16px 40px; }
+            .piece-hero { padding: 18px 20px; }
+            .piece-title { font-size: 1.3rem; }
+            .overview-grid { grid-template-columns: 1fr; }
+            .gen-row { flex-direction: column; }
+            .section-nav { gap: 3px; }
+            .nav-btn { padding: 8px 12px; font-size: 0.72rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="back-btn">&larr; Apps</a>
+    <h1>Guia d'Interpretaci&oacute;</h1>
+    <div class="header-actions">
+        <button class="btn-header" onclick="app.printGuide()" title="Imprimir">&#128424; Imprimir</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="guide-selector" id="guideSelector" style="display:none">
+        <label>Guia:</label>
+        <select id="guideSelect" onchange="app.loadGuide(this.value)"></select>
+    </div>
+
+    <div id="guideContent"></div>
+
+</div>
+
+<footer>
+    Guia d'Interpretaci&oacute; &middot; 2026
+    <p class="footer-version">v1.0</p>
+</footer>
+
+<script>
+const GUIDES = {};
+
+GUIDES['granados-vals-muy-lento'] = {
+    piece: {
+        composer: 'Enrique Granados',
+        title: 'Vals Muy Lento',
+        collection: 'Bocetos (Esbossos), nº III',
+        key: 'La major',
+        tempo: 'Lento assai',
+        meter: '3/4',
+        difficulty: 'Intermedi-avançat (Grau 6-7)',
+        duration: '~4-5 minuts',
+        style: 'Romanticisme espanyol de saló'
+    },
+    context: `Granados va escriure els <strong>Bocetos</strong> com a esbossos poètics — petits quadres sonors que capturen un estat d'ànim, com un pintor impressionista. El <strong>Vals Muy Lento</strong> no és un vals per ballar: és un vals per <em>recordar</em>. Granados, profundament influençat per Chopin, crea aquí una peça de saló íntima on la melodia ha de cantar amb la naturalitat d'una veu humana, amb la llibertat rítmica (rubato) que caracteritza l'escola romàntica espanyola. La tonalitat de La major li dona un color càlid i daurat, lleugerament nostàlgic.`,
+    overview: {
+        structure: 'Forma ternària ampliada (A – B – A\' + Coda) amb Da Capo sense repeticions',
+        challenges: [
+            'Fer cantar la melodia per sobre de l\'acompanyament (voicing)',
+            'Rubato natural que no soni calculat ni mecànic',
+            'Contrast entre seccions líriques i dramàtiques (sf)',
+            'Control del pp a la Coda — desaparèixer sense perdre qualitat de so',
+            'Pedalització neta en textura de vals'
+        ],
+        generalTone: 'To general: intimitat, nostalgia, bellesa sense ostentació. Mai fort per demostrar — sempre fort per <em>expressar</em>.'
+    },
+    sections: [
+        {
+            title: 'Tema Principal',
+            subtitle: 'El vals que recorda',
+            measures: 'Pàgina 1, sistemes 1-2',
+            markings: 'Lento assai · mf · 3/4',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p>Imagina un saló amb llum tènue a finals del segle XIX. Expliques un record bonic a algú molt proper, en veu baixa. <span class="pract">velocitat d'atac de la tecla <strong>lenta</strong>: el dit enfonsa la tecla com si penetrés en sorra tova, no com si colpegés una superfície dura. Braç relaxat, pes natural sense impuls muscular extra. Canell flexible que actua com un amortidor entre el braç i els dits</span></p>
+<p>El <strong>mf</strong> inicial no és un forte disfressat — és un to càlid i present, com una conversa en confiança. <span class="pract">nivès la tecla fins a 2/3 de la seva profunditat total, no fins al fons. El dit manté contacte amb la tecla abans de tocar — no hi ha espai d'aire entre dit i tecla a l'inici de l'atac</span></p>`
+                },
+                {
+                    type: 'phrasing',
+                    icon: '🎵',
+                    name: 'Frasejat i Direcció',
+                    content: `<p>La melodia respira en <strong>frases de 4 compassos</strong>: la primera frase pregunta, la segona respon. Cada frase té un arc natural — puja cap a un punt culminant i després baixa.</p>
+<div class="pract-block">Al punt culminant de cada frase (normalment compàs 2-3 de cada grup de 4), augmenta lleugerament el pes del braç sobre el dit que toca la nota més aguda/important. A la baixada, alleugereix progressivament el pes alçant imperceptiblement el canell. El gest és com un arc de violinista: més pressió al centre de l'arcada, menys als extrems.</div>
+<p>Entre frases, <strong>respira</strong>: no tallis la última nota, però deixa que es vagi apagant naturalment. <span class="pract">alça el canell lentament en l'última nota de la frase, creant un diminuendo natural pel canvi d'angle. La nova frase comença amb un gest descendent del canell, com si deixessis caure la mà suaument</span></p>`
+                },
+                {
+                    type: 'rubato',
+                    icon: '🌊',
+                    name: 'Rubato',
+                    content: `<p>El rubato en Granados és com la respiració natural: no el planifiques, el sents. Però al principi cal guiar-lo conscientment.</p>
+<p><strong>Regla bàsica</strong>: alenteix lleugerament cap al final de cada frase de 4 compassos, i reprèn el tempo a l'inici de la següent. <span class="pract">als compassos 3-4 de cada frase, cada temps dura un pel més que l'anterior (un 10-15%, no més). El primer temps del compàs següent torna al tempo original. Mai paris completament — el rubato és desacceleració, no parada</span></p>
+<p><strong>Regla de Chopin/Granados</strong>: la mà esquerra manté el pols bàsic del vals (amb mínimes variacions), mentre la mà dreta és lliure de rubato per sobre. <span class="pract">practica primer la mà esquerra sola amb metrònom a tempo molt lent (negra = 40-50). Quan estigui estable, afegeix la mà dreta permetent-li arribar una mica abans o després del temps. El baix del primer temps és l'ancla — la melodia flota al voltant</span></p>`
+                },
+                {
+                    type: 'dynamics',
+                    icon: '🔊',
+                    name: 'Dinàmica i Veus',
+                    content: `<p>La mà dreta canta la melodia i ha de sonar <strong>sempre per sobre</strong> de la mà esquerra. La mà esquerra és un coixí harmònic, no un protagonista.</p>
+<div class="pract-block"><strong>Mà dreta (melodia)</strong>: enfonsa les tecles amb pes del braç canalitzat pel dit. El pes ve de l'espatlla, passa pel colze, i surt pel dit que toca la nota de melodia. Els altres dits de la mà dreta que toquen notes d'acompanyament han de ser més lleugers — toca'ls amb els dits sols, sense pes del braç.<br><br>
+<strong>Mà esquerra (baix de vals)</strong>: el dit 5 al baix del primer temps toca fins a 2/3 de profunditat, amb pes del braç mínim. Després del baix, alça ràpidament el canell amb un gest d'escapament cap amunt. Els acords dels temps 2 i 3 són fantasmes: toca'ls amb els dits sols, quasi sense pes, a menys de la meitat de profunditat de tecla.</div>
+<p><strong>Truc de practica</strong>: toca la melodia sola amb mà dreta ff, i l'acompanyament (mà dreta + esquerra) pp. Després apropa les dinàmiques gradualment, mantenint sempre la proporció. <span class="pract">la melodia ha de sonar uns 40% més forta que l'acompanyament — si la melodia és mf, l'acompanyament és p</span></p>`
+                },
+                {
+                    type: 'pedal',
+                    icon: '🦶',
+                    name: 'Pedal',
+                    content: `<p>Pedal de vals clàssic: sustain amb cada harmonia, canvi net entre harmonies.</p>
+<div class="pract-block"><strong>Mecànica bàsica</strong>: baixa el pedal <strong>just després</strong> de tocar el baix del primer temps (no simultàniament — una fracció de segon després). Mantén-lo durant tot el compàs si la harmonia no canvia. Alça completament just <strong>abans</strong> del primer temps del compàs següent i torna a baixar just després del nou baix.<br><br>
+<strong>La clau</strong>: l'alçament ha de ser ràpid i complet — si deixes el pedal a mig camí, arrossegues residu harmònic. Practica el canvi de pedal sense tocar: peu amunt-avall, amunt-avall, fins que el gest sigui automàtic.<br><br>
+<strong>En passatges ornamentals</strong>: mig pedal (alça el pedal només fins a la meitat del recorregut) per mantenir ressonància sense barrejar les notes de pas.</div>`
+                },
+                {
+                    type: 'tips',
+                    icon: '💡',
+                    name: 'Consells clau',
+                    content: `<ul>
+<li><strong>Primer compàs</strong>: no entris amb pressa. Respira abans de tocar, imagina el so que vols, i deixa caure la mà amb calma. <span class="pract">alça les mans uns 15 cm per sobre del teclat, inspira, i deixa'ls caure amb gravetat natural sobre les tecles del primer acord. El primer so defineix tot el caràcter</span></li>
+<li><strong>Digitació de la melodia</strong>: respecta les digitacions de la partitura — estàn pensades per facilitar el legato. <span class="pract">el legato real es fa amb substitucions de dit silencioses: quan un dit ha de passar a la nota següent, el dit anterior no alça fins que el nou ja ha enfonsat la tecla</span></li>
+<li><strong>Tempo</strong>: Lento assai = molt lent. Negra ≈ 44-52. Si toques més ràpid, perds la qualitat meditativa. <span class="pract">posa el metrònom a 48, toca un cop sencer, i després apaga'l i toca de memòria la sensació de pols, no el clic exacte</span></li>
+</ul>`
+                }
+            ]
+        },
+        {
+            title: 'Expansió Melòdica',
+            subtitle: 'La melodia s\'eleva i s\'ornamenta',
+            measures: 'Pàgina 1, sistemes 3-5',
+            markings: 'mp · ornaments · rit. al final',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p>La melodia s'eleva al registre agut i es torna més ornamental, com un narrador que s'emociona recordant i afegeix detalls al relat. <span class="pract">manté la mateixa qualitat de so que la secció anterior però amb una mica menys pes de braç (les notes agudes necessiten menys pes per sonar amb cos). Canell lleugerament més alt per arribar al registre agut sense tensió al colze</span></p>
+<p>Els ornaments (grupets, mordents) són <strong>part de l'expressió</strong>, no decoració. Cada ornament neix de la nota principal com un gest vocal natural. <span class="pract">toca els ornaments <strong>abans</strong> del temps, no sobre el temps. El dit que fa l'ornament ha de ser lleuger i ràpid, amb un moviment de dit pur (sense canell ni braç). La nota principal després de l'ornament rep el pes del braç</span></p>`
+                },
+                {
+                    type: 'phrasing',
+                    icon: '🎵',
+                    name: 'Frasejat i Direcció',
+                    content: `<p>Les frases es fan més llargues i asimètriques. Busca el punt culminant de cada frase — normalment la nota més aguda o la que té més tensió harmònica. <span class="pract">marca amb llàpis al teu exemplar la nota culminant de cada frase. Practica fent un petit crescendo cap a aquella nota i diminuendo després. L'arc dinàmic ha de ser suau i continu, mai en escaló</span></p>
+<p>Les línies ascendents tenen direcció natural cap amunt — acompanya-les amb un lleuger crescendo. Les descendents, diminuendo. <span class="pract">en una escala o passatge ascendent, cada nota successiva rep una mica més pes que l'anterior (augment de pressió del braç del 5-10% per nota). En descendents, l'invers</span></p>`
+                },
+                {
+                    type: 'rubato',
+                    icon: '🌊',
+                    name: 'Rubato',
+                    content: `<p>Aquí el rubato es fa més lliure. Les notes ornamentals conviden a petites fluctuacions de tempo.</p>
+<p><strong>Abans d'una nota important</strong>: un mícron de retard (agògica) crea anticipació. <span class="pract">just abans de la nota culminant de la frase, el dit es queda "suspès" sobre la tecla una fracció de segon (entre un 20-30% de la durada del temps) abans d'enfonsar. No és una pausa — és una desacceleració que culmina en aquella nota</span></p>
+<p>Al <strong>rit.</strong> del final d'aquesta secció: és un ritardando gradual que prepara la següent secció. <span class="pract">distribueix el rallentando en 3-4 temps, fent cada temps un 15-20% més llarg que l'anterior. L'última nota de la secció es pot allargar fins al doble del seu valor escrit</span></p>`
+                },
+                {
+                    type: 'technique',
+                    icon: '🖐️',
+                    name: 'Tècnica',
+                    content: `<p>La teva anotació <strong>"petit gest canell / evitar encallar-se"</strong> és clau aquí. En passatges ornamentals, el canell ha de guiar, no bloquejar.</p>
+<div class="pract-block"><strong>El gest de canell</strong>: quan arribes a un grup de notes ràpides o un ornament, el canell fa un petit cercle o oscil·lació lateral que "llança" els dits sobre les tecles. Pensa en el gest de treure una mosca d'un got d'aigua — ràpid, circular, lleuger.<br><br>
+<strong>Per evitar encallar-se</strong>: mai preparis un ornament "pensant en cada nota". Practica l'ornament com un gest únic, no com una sèrie de notes. Toca'l ràpid des del principi (encara que soni brut), i després refina. Si el practiques lent nota a nota, el dit es "memoritza" la lentitud i s'encalla.</div>
+<p>En els passatges amb intervals grans entre notes, no saltis — llisca. <span class="pract">mou tot el braç des de l'espatlla, no només la mà des del canell. El braç porta la mà a la posició i el dit només enfonsa la tecla. Visualitza una línia corba (no recta) entre les dues posicions</span></p>`
+                },
+                {
+                    type: 'tips',
+                    icon: '💡',
+                    name: 'Consells clau',
+                    content: `<ul>
+<li>Practica la melodia sola de mà dreta cantant-la en veu alta (o taral·lejant) mentre toques. Si no pots cantar-la, no l'estàs frasejant prou. <span class="pract">canta la línia melòdica i escolta on respires naturalment — allà és on ha de respirar el piano</span></li>
+<li>Les digitacions marcades <strong>5/2, 5/3, 4/2</strong> indiquen passatges on la mà ha de cobrir intervals grans. <span class="pract">obre la mà amb calma, sense tensió al polze. Si l'interval és més gran del que la mà arriba còmodament, usa un legato de pedal: enfonsa el pedal per unir les notes i alça el dit anterior un instant abans d'arribar a la següent</span></li>
+</ul>`
+                }
+            ]
+        },
+        {
+            title: 'Episodi Dramàtic',
+            subtitle: 'El contrast apasionat',
+            measures: 'Pàgina 2, sistemes 1-2',
+            markings: 'sf · amb energia · contrastant',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p>Canvi radical: del record nostàlgic a un esclat passional. Com si el narrador de cop sentés una punxada al cor pel que recorda. <span class="pract">el canvi de caràcter es prepara en l'últim compàs de la secció anterior: després del rit., un instant de silènci (alça el pedal completament, mans suspeses a 10 cm del teclat), i ataca la nova secció amb un gest descendent ràpid i decidit del braç sencer</span></p>
+<p>Els <strong>sf</strong> (sforzando) són accents expressius, no cops. Cada sf és un crit contingut, no un crit descontrolat. <span class="pract">l'sf es fa amb un atac ràpid de la tecla (velocitat alta d'enfonsar) seguit d'un alçament <strong>immediat</strong> del pes del braç. El dit enfonsa ràpid, el canell absorbeix l'impacte alçant-se immediatament com una pilota que rebota. Si deixes el pes després de l'sf, sonarà pesat i brutal en lloc de punxant i expressiu</span></p>`
+                },
+                {
+                    type: 'dynamics',
+                    icon: '🔊',
+                    name: 'Dinàmica i Veus',
+                    content: `<p>La dinàmica general puja a f, però <strong>no tot és fort</strong>. Els sf sobresurten per sobre d'un fons de mf. <span class="pract">practica primer tot el passatge a mp, i després afegeix els sf com "punxades" que surten un 50% per sobre del nivell base. L'error típic és tocar tot fort i llavors els sf no es distingeixen</span></p>
+<p>La teva anotació <strong>"agafar la tecla"</strong> és perfecta per als sf. <span class="pract">imagina que la tecla és un objecte que agafes amb decisió: el dit arriba al fons de la tecla amb fermesa i s'hi queda un instant (no rebota immediatament). Després de l'agafada, allibera el pes i deixa que la nota resoni dins el pedal</span></p>`
+                },
+                {
+                    type: 'technique',
+                    icon: '🖐️',
+                    name: 'Tècnica',
+                    content: `<p>La teva anotació <strong>"ti/ri/ti/ri ti"</strong> indica un patró rítmic de notes ràpides repetides o alternades. Aquí la tècnica de dit és crítica.</p>
+<div class="pract-block"><strong>Per a notes ràpides repetides o ornaments en aquest passatge</strong>: usa substitució de dits (3-2-1 o 4-3-2) sobre la mateixa tecla, mai el mateix dit repetit. El canell ha d'estar completament relaxat i lleugerament alt. Cada dit "escombra" la tecla cap endins amb un moviment ràpid, i el següent dit ja està preparat per sobre.<br><br>
+<strong>Practica el patró</strong>: primer molt lent amb articulació exagerada (alça cada dit 3 cm abans de tocar), i després accelera gradualment fins que el gest sigui mínim i ràpid. El so ha de ser perlat i uniforme, no accentuat.</div>`
+                },
+                {
+                    type: 'pedal',
+                    icon: '🦶',
+                    name: 'Pedal',
+                    content: `<p>En els sf, el pedal és més curt i canvia més sovint per mantenir claredat. <span class="pract">en compàs amb sf: pedal avall amb el sf, alça al segon temps, torna a baixar al tercer si cal ressonància. Si hi ha dos sf seguits, canvia pedal amb cada un per evitar acumulació</span></p>
+<p>Si la harmonia canvia ràpidament, usa <strong>mig pedal</strong>: alça només fins a la meitat. <span class="pract">el peu alça el pedal fins que notes la resitència a la meitat del recorregut. Això neteja les freqüències greus (que embruteixen) però manté les agudes (que donen brillantor)</span></p>`
+                }
+            ]
+        },
+        {
+            title: 'Cor Líric',
+            subtitle: 'El centre emocional de la peça',
+            measures: 'Pàgines 2-3, molto espress.',
+            markings: 'molto espressivo · líric · íntim',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p><strong>Molto espressivo</strong> és la indicació més important de tota la peça. Aquí Granados et demana que t'obris completament. Com una declaració sense paraules, o un sol de tarda que entra per la finestra i ho tenyeix tot de color. <span class="pract">el "molto espressivo" es tradueix físicament en: més pes del braç sobre la melodia, velocitat de tecla més variada (lenta en notes tendres, més ràpida en notes apasionades), i més connexió entre notes (legato profund, tecles que es solapen lleugerament)</span></p>
+<p>La teva anotació <strong>"acompanyar amb direcció per sobre"</strong> és clau: la mà que acompanya ha de seguir la direcció de la melodia, no anar pel seu compte. <span class="pract">si la melodia puja i fa crescendo, l'acompanyament també creix una mica (no tant com la melodia). Si la melodia brava cap avall, l'acompanyament també decreix. Són dues veus que parlen del mateix, no dues conversations separades</span></p>`
+                },
+                {
+                    type: 'rubato',
+                    icon: '🌊',
+                    name: 'Rubato',
+                    content: `<p>Aquí el rubato és més lliure que en cap altra secció. Les frases es poden estirar i comprimir més. Però hi ha una regla d'or: <strong>el que robes a una nota, ho tornes a la següent</strong>.</p>
+<div class="pract-block"><strong>Exercici de rubato conscient</strong>: toca la secció amb metrònom a la meitat del tempo. Grava't. Després toca-la sense metrònom, amb total llibertat, i grava't. Escolta les dues versions: la segona hauria de ser més expressiva però <strong>arribar al final de cada frase aproximadament al mateix temps</strong> que la primera. Si la versió lliure és molt més larga o curta, has robat sense tornar.<br><br>
+<strong>On alentir</strong>: abans de notes climàtiques, al final de frases llargues, en intervals grans descendents (la caiguda necessita temps per "sentir-se").<br>
+<strong>On avançar</strong>: en passatges ascendents amb energia, en línies escalístiques, després de cada alentiment (per compensar).</div>`
+                },
+                {
+                    type: 'dynamics',
+                    icon: '🔊',
+                    name: 'Dinàmica i Veus',
+                    content: `<p>Aquesta secció demana el màxim control de <strong>voicing</strong>. Sovint hi ha tres capes simultànies: melodia, veu interior, i baix. Cadascuna necessita el seu nivell dinàmic.</p>
+<div class="pract-block"><strong>Tres capes</strong>:<br>
+1. <strong>Melodia</strong> (veu superior, mà dreta): mf, plena i cantant. Pes de braç concentrat al dit que toca la melodia.<br>
+2. <strong>Veu interior</strong> (notes del mig, sovint polze de mà dreta o dits 1-3 de mà esquerra): pp, present però discreta. Toca amb el dit sol, sense pes de braç, enfonsant la tecla només a meitat recorregut.<br>
+3. <strong>Baix</strong> (dit 5 mà esquerra): mp, fermament present com a fonament. Pes de braç moderat, tecla al fons però sense duresa.<br><br>
+<strong>Practica</strong>: toca només la melodia amb mà dreta, fort i expressiva. Després afegeix només el baix, ppp. Després afegeix les veus interiors, ppp. Mantén les proporcions en ajuntar.</div>`
+                },
+                {
+                    type: 'phrasing',
+                    icon: '🎵',
+                    name: 'Frasejat i Direcció',
+                    content: `<p>Les frases aquí són més llargues i sinuoses. La melodia es mou en ondulacions que cal seguir amb tot el cos.</p>
+<p><strong>Direcció de la frase</strong>: cada frase va "cap a algun lloc". Identifica la nota o acord objectiu (sovint la nota més aguda, o l'acord més tens harmònicament). Tot el que hi ha abans prepara, i tot el que hi ha després resol. <span class="pract">marca la nota objectiu de cada frase amb un cercle al teu exemplar. Practica fent un crescendo gradual fins aquella nota i un diminuendo després. El crescendo no és només volum: també és més intensitat de so (tecla més al fons, més vibrato de braç)</span></p>`
+                },
+                {
+                    type: 'tips',
+                    icon: '💡',
+                    name: 'Consells clau',
+                    content: `<ul>
+<li>Escolta <strong>Alicia de Larrocha</strong> tocant qualsevol Granados — ella tenia la combinació perfecta de llibertat i control. Fixa't com les frases <em>respiren</em>. <span class="pract">escolta amb els ulls tancats i mou les mans sobre la taula imitant els seus gestos. Després intenta reproduir les mateixes sensacions al piano</span></li>
+<li>Les notes de pas (notes que connecten una nota important amb la següent) han de ser lleugeres. <span class="pract">les notes de pas es toquen amb menys enfonament de tecla (1/2 a 2/3 de profunditat) i sense pes de braç. Són el fil que connecta les perles, no les perles</span></li>
+</ul>`
+                }
+            ]
+        },
+        {
+            title: 'Poco più vivo',
+            subtitle: 'L\'impuls cap al clímax',
+            measures: 'Pàgina 3 (final) - Pàgina 4',
+            markings: 'Poco più vivo · f · accents · D.C. senza replica',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p>"Poco più vivo" = una mica més viu. No és un canvi dràstic de tempo — és com si el cor batigués una mica més de pressa per l'emoció. <span class="pract">augmenta el tempo un 10-15% respecte al Lento assai inicial (si estaves a negra=48, ara ves a negra=52-56). L'augment ha de ser gradual en els primers 2-3 compassos, no sobtat</span></p>
+<p>El <strong>f</strong> (forte) aquí és passional, no percussiu. Com algú que puja la veu perquè no pot contenir el que sent. <span class="pract">f amb pes de braç complet (des de l'espatlla), però velocitat d'atac de tecla <strong>moderada</strong> (no ràpida com en un sf). El so ha de ser rodó i ple, no brillant i agut. Si sona "metàl·lic", és que ataques massa ràpid — alenteix l'atac i afegeix més pes</span></p>`
+                },
+                {
+                    type: 'phrasing',
+                    icon: '🎵',
+                    name: 'Frasejat i Direcció',
+                    content: `<p>Les frases aquí són més curtes i urgents. La música avança cap al clímax final amb més determinació.</p>
+<p>Els <strong>accents (&gt;)</strong> marquen els punts d'èmfasi dins de cada frase. <span class="pract">un accent no és un sf — és una nota que sobresurt un 20-30% del nivell base, no un 50%. Es fa amb una lleugera acceleració de l'atac de la tecla i un pel més de pes, però sense el rebot del canell que faries en un sf</span></p>
+<p>El <strong>rall.</strong> abans del "D.C. senza replica" prepara el retorn al tema inicial. Ha de sonar com un gest de "i ara torna a començar la història". <span class="pract">distribueix el rall. en els últims 3-4 temps. L'últim temps pot durar el doble. Al final, alça el pedal completament i fes una pausa de 2-3 segons amb les mans immòbils sobre el teclat abans de reprendre el tema</span></p>`
+                },
+                {
+                    type: 'rubato',
+                    icon: '🌊',
+                    name: 'Rubato',
+                    content: `<p>Menys rubato que en les seccions anteriors. El "più vivo" implica més direcció i menys vacil·lació. <span class="pract">mantén el pols més ferm (podries tenir el metrònom com a guia, encara que no el segueixis exactament). El rubato aquí és micro: petits retards d'una semicorxera abans de notes accentuades, no grans estiraments de frases senceres</span></p>`
+                },
+                {
+                    type: 'technique',
+                    icon: '🖐️',
+                    name: 'Tècnica',
+                    content: `<p>En passatges amb acords densos i salts: la precisió ve de la <strong>preparació</strong>, no de la velocitat del salt.</p>
+<div class="pract-block"><strong>Salts d'acords</strong>: mentre toquen els dits en una posició, la ment ja ha d'estar "veient" la posició següent. Practica els salts en càmera lenta: toca l'acord, alça la mà lentament, visualitza la posició següent, col·loca la mà per sobre sense tocar, i després enfonsa. Augmenta la velocitat progressivament.<br><br>
+<strong>Acords fortíssim</strong>: el pes ve de tota la part superior del cos. Colzes oberts (no enganxats al cos), esquena recta, i una sensació de "prémer cap avall" des de les espatlles. No tensis les mans: els dits estan ferms per aguantar la forma de l'acord, però el canell i l'avantbraç estan relaxats.</div>`
+                }
+            ]
+        },
+        {
+            title: 'CODA',
+            subtitle: 'La dissolució',
+            measures: 'Pàgina 4, sistemes 2-3',
+            markings: 'meno · sempre dim. · Lento · pp · rall. · 𝜎',
+            aspects: [
+                {
+                    type: 'character',
+                    icon: '🎭',
+                    name: 'Caràcter',
+                    content: `<p>La peça es dissol com un record que s'esvaeix. <strong>"Sempre dim."</strong> és la indicació mestra: des d'aquí, tot va cap a menys, cap a res. Com la llum de tarda que es va apagant. <span class="pract">comença la Coda a mp i planifica una línia recta de descens dinàmic fins al pp final. Cada compàs ha de ser imperceptiblement més suau que l'anterior. Redueix progressivament el pes del braç: al principi tot el braç, després només l'avantbraç, després només la mà, i al final només els dits amb el pes mínim per fer sonar la tecla</span></p>
+<p>El <strong>Lento</strong> marca un canvi a encara més lent. Com si el temps s'aturés. <span class="pract">redueix el tempo un 20-25% respecte al tempo inicial. Cada temps és ara un respir sencer. Les mans es mouen com si estiguessin dins d'aigua</span></p>`
+                },
+                {
+                    type: 'dynamics',
+                    icon: '🔊',
+                    name: 'Dinàmica i Veus',
+                    content: `<p>El <strong>pp</strong> final és un dels moments més difícils. No és "tocar fluixet" — és tocar amb la mateixa qualitat de so però amb mínim volum.</p>
+<div class="pract-block"><strong>Com aconseguir un pp bonic</strong> (no un pp feble):<br>
+1. <strong>Contacte previ</strong>: el dit ja toca la superfície de la tecla abans d'enfonsar. Zero espai d'aire.<br>
+2. <strong>Velocitat lenta</strong>: la tecla s'enfonsa molt lentament, com si enfonsessis un globus en l'aigua sense que fes soroll.<br>
+3. <strong>Profunditat parcial</strong>: la tecla s'enfonsa només 1/3 o 1/2 del recorregut total.<br>
+4. <strong>Pes mínim</strong>: només el pes del dit i una mica de mà, res de braç. El canell està alt, la mà penja dels dits com una cortina.<br>
+5. <strong>Escoltar</strong>: el pp requereix <strong>més</strong> concentració auditiva que el f. Escolta cada nota individualment.</div>`
+                },
+                {
+                    type: 'pedal',
+                    icon: '🦶',
+                    name: 'Pedal',
+                    content: `<p>En el pp, el pedal crea una aurèola de ressonància que envolta les notes. Però ha de ser netíssim.</p>
+<p><strong>Pedal final</strong>: en els últims compassos, pots deixar el pedal a mitges — un "voile" de ressonància que no embruta però que manté el so "viu". <span class="pract">després de l'últim acord, manté el pedal mentre el so s'extingeix naturalment. No alçis el pedal fins que el so hagi desaparegut completament. Llavors, alça'l molt lentament. El silènci després de la última nota és part de la peça — espera 3-4 segons amb les mans immòbils abans de retirar-les del teclat</span></p>`
+                },
+                {
+                    type: 'rubato',
+                    icon: '🌊',
+                    name: 'Rubato',
+                    content: `<p>El <strong>rall.</strong> final és un gest de "deixar anar". Cada nota és més llarga que l'anterior, com si el temps s'espessís.</p>
+<div class="pract-block">En els últims 4-5 temps de la peça, cada temps dura un 20-30% més que l'anterior. L'última nota (amb calderón/fermata) es manté com a mínim el triple del seu valor escrit. No la tallis: deixa que es vagi apagant per ella sola.<br><br>
+<strong>No facis rit. sobre el rit.</strong>: si arribes al rall. final ja molt lent, no tindràs marge per alentir més. Mantén un pols clar fins 2-3 compassos abans del final, i després deixa anar el tempo progressivament.</div>`
+                },
+                {
+                    type: 'tips',
+                    icon: '💡',
+                    name: 'Consells clau',
+                    content: `<ul>
+<li><strong>L'error més comú</strong>: arribar al final amb pressa o amb tensió. La Coda ha de ser el moment més relaxat de tota la peça — físicament i musicalment. <span class="pract">abans de la Coda, fes una micro-pausa, relaxa conscientemente les espatlles (baixa-les 2 cm), desbloqueja els colzes, i entra a la Coda com si flotessis</span></li>
+<li><strong>Després de l'última nota</strong>: NO moguis les mans. No tossis. No miris el públic (o el gat). La peça no acaba quan l'última nota sona — acaba quan el silènci després d'ella s'ha complet. <span class="pract">compta mentalment 4 temps de silènci al tempo del Lento després del calderón. Després retira les mans lentament cap a la falda</span></li>
+</ul>`
+                }
+            ]
+        }
+    ],
+    recordings: [
+        {
+            artist: 'Alicia de Larrocha',
+            album: 'Granados: Piano Music (Decca)',
+            note: 'La referència absoluta. Escolta com respira cada frase, el rubato natural, el to daurat. És la veu de Granados al piano.'
+        },
+        {
+            artist: 'Douglas Riva',
+            album: 'Granados: Complete Piano Music (Brilliant Classics)',
+            note: 'Edició completa amb notes detallades. Interpretació més acadèmica però molt fidel al text. Bona per comparar amb De Larrocha.'
+        },
+        {
+            artist: 'Thomas Rajna',
+            album: 'Granados: Piano Works (CRD)',
+            note: 'Estil més contingut i clàssic. Útil per escoltar una visió diferent i trobar el teu propi equilibri entre llibertat i rigor.'
+        }
+    ],
+    practiceStrategy: [
+        '<strong>Setmana 1-2: Mans separades amb expressió</strong> — No practiquis mans separades "només per aprendre les notes". Des del primer dia, cada mà ha de tocar amb dinàmica i frasejat. Canta la melodia mentre la toques.',
+        '<strong>Setmana 3: Juntar per seccions</strong> — No juntis tota la peça d\'un cop. Treballa cada secció independentment fins que soni musical, i després connecta dues seccions consecutives.',
+        '<strong>Setmana 4: Voicing i pedal</strong> — Amb les notes segures, dedica sessions senceres només al control de veus i al pedal. Grava\'t i escolta críticament: se sent la melodia per sobre? El pedal està net?',
+        '<strong>Setmana 5-6: Rubato i caràcter</strong> — Escolta els enregistraments de referència. Imita primer (no és fer trampa, és aprendre). Després experimenta amb el teu propi rubato.',
+        '<strong>Continu: Grava\'t cada setmana</strong> — El millor professor ets tu mateix escoltant-te des de fora. Grava amb el mòbil i escolta l\'endemà amb orelles fresques.'
+    ]
+};
+
+const app = {
+    currentGuide: null,
+    currentSection: 0,
+
+    init() {
+        const saved = localStorage.getItem('interpretation-guides');
+        if (saved) {
+            try {
+                const parsed = JSON.parse(saved);
+                Object.assign(GUIDES, parsed);
+            } catch(e) {}
+        }
+        this.loadGuide('granados-vals-muy-lento');
+        this.updateSelector();
+    },
+
+    updateSelector() {
+        const keys = Object.keys(GUIDES);
+        if (keys.length > 1) {
+            const sel = document.getElementById('guideSelector');
+            sel.style.display = 'flex';
+            const select = document.getElementById('guideSelect');
+            select.innerHTML = keys.map(k => {
+                const g = GUIDES[k];
+                return `<option value="${k}">${g.piece.composer}: ${g.piece.title}</option>`;
+            }).join('');
+            select.value = this.currentGuide;
+        }
+    },
+
+    loadGuide(key) {
+        this.currentGuide = key;
+        this.currentSection = 0;
+        this.render();
+    },
+
+    render() {
+        const g = GUIDES[this.currentGuide];
+        if (!g) return;
+        const container = document.getElementById('guideContent');
+
+        let html = '';
+
+        // Hero
+        html += `<div class="piece-hero">
+            <div class="piece-composer">${g.piece.composer}</div>
+            <div class="piece-title">${g.piece.title}</div>
+            <div class="piece-collection">${g.piece.collection}</div>
+            <div class="piece-meta">
+                <span class="meta-tag">${g.piece.key}</span>
+                <span class="meta-tag">${g.piece.tempo}</span>
+                <span class="meta-tag">${g.piece.meter}</span>
+                <span class="meta-tag">${g.piece.difficulty}</span>
+                <span class="meta-tag">${g.piece.duration}</span>
+                <span class="meta-tag">${g.piece.style}</span>
+            </div>
+        </div>`;
+
+        // Context
+        html += `<div class="context-block">${g.context}</div>`;
+
+        // Section Nav
+        const navItems = [
+            `<button class="nav-btn ${this.currentSection === 0 ? 'active' : ''}" onclick="app.showSection(0)"><span class="nav-num">0</span>Visió Global</button>`
+        ];
+        g.sections.forEach((s, i) => {
+            navItems.push(`<button class="nav-btn ${this.currentSection === i+1 ? 'active' : ''}" onclick="app.showSection(${i+1})"><span class="nav-num">${i+1}</span>${s.title}</button>`);
+        });
+        html += `<nav class="section-nav">${navItems.join('')}</nav>`;
+
+        // Overview panel
+        html += `<div class="section-panel ${this.currentSection === 0 ? 'active' : ''}" id="panel-0">`;
+        html += `<div class="section-header"><span class="section-title">Visió Global</span></div>`;
+        html += `<div class="overview-grid">
+            <div class="overview-card">
+                <h4>Estructura</h4>
+                <p>${g.overview.structure}</p>
+            </div>
+            <div class="overview-card">
+                <h4>To General</h4>
+                <p>${g.overview.generalTone}</p>
+            </div>
+        </div>`;
+        html += `<div class="overview-card" style="margin-bottom:16px">
+            <h4>Reptes Principals</h4>
+            <ul>${g.overview.challenges.map(c => `<li>${c}</li>`).join('')}</ul>
+        </div>`;
+
+        // Recordings in overview
+        html += `<div class="recordings"><h3>Enregistraments de Referència</h3>`;
+        g.recordings.forEach(r => {
+            html += `<div class="rec-item">
+                <span class="rec-icon">🎶</span>
+                <div class="rec-info">
+                    <div class="rec-artist">${r.artist}</div>
+                    <div class="rec-album">${r.album}</div>
+                    <div class="rec-note">${r.note}</div>
+                </div>
+            </div>`;
+        });
+        html += `</div>`;
+
+        // Practice strategy in overview
+        html += `<div class="practice"><h3>Estratègia de Pràctica</h3>
+            <ol>${g.practiceStrategy.map(s => `<li>${s}</li>`).join('')}</ol>
+        </div>`;
+
+        html += `</div>`; // end overview panel
+
+        // Section panels
+        g.sections.forEach((s, i) => {
+            html += `<div class="section-panel ${this.currentSection === i+1 ? 'active' : ''}" id="panel-${i+1}">`;
+            html += `<div class="section-header">
+                <span class="section-title">${s.title}</span>
+                <span class="section-measures">${s.measures}</span>
+            </div>`;
+            html += `<div class="section-markings">${s.markings}</div>`;
+
+            s.aspects.forEach((a, j) => {
+                const open = j < 2 ? ' open' : '';
+                html += `<div class="aspect${open}" onclick="this.classList.toggle('open')">
+                    <div class="aspect-header">
+                        <div class="aspect-icon ${a.type}">${a.icon}</div>
+                        <span class="aspect-name">${a.name}</span>
+                        <span class="aspect-arrow">▶</span>
+                    </div>
+                    <div class="aspect-body">
+                        <div class="aspect-content">${a.content}</div>
+                    </div>
+                </div>`;
+            });
+
+            html += `</div>`;
+        });
+
+        // AI Generator
+        html += `<div class="generator">
+            <h3>Generar Nova Guia amb IA</h3>
+            <p style="font-size:0.84rem;color:var(--text-secondary);margin-bottom:14px">
+                Introdueix una peça i genera el prompt optimitzat per Claude. Copia'l, enganxa'l a una conversa amb Claude, i torna aquí amb el resultat.
+            </p>
+            <div class="gen-row">
+                <input class="gen-input" id="genComposer" placeholder="Compositor (ex: Chopin)" />
+                <input class="gen-input" id="genTitle" placeholder="Títol (ex: Nocturne Op.9 No.2)" />
+                <input class="gen-input" id="genLevel" placeholder="Nivell (ex: intermedi)" value="intermedi" />
+                <button class="gen-btn" onclick="app.generatePrompt()">Generar Prompt</button>
+            </div>
+            <div class="gen-prompt-area" id="genPromptArea">
+                <textarea id="genPromptText" readonly></textarea>
+                <div class="gen-actions">
+                    <button class="gen-btn" onclick="app.copyPrompt()">Copiar prompt</button>
+                </div>
+            </div>
+            <div class="gen-paste-area" id="genPasteArea">
+                <p style="font-size:0.82rem;color:var(--text-secondary);margin:12px 0 8px">Enganxa la resposta de Claude aquí:</p>
+                <textarea id="genPasteText" placeholder="Enganxa aquí la resposta JSON de Claude..."></textarea>
+                <div class="gen-actions">
+                    <button class="gen-btn" onclick="app.importAIGuide()">Importar Guia</button>
+                </div>
+            </div>
+        </div>`;
+
+        container.innerHTML = html;
+    },
+
+    showSection(idx) {
+        this.currentSection = idx;
+        document.querySelectorAll('.nav-btn').forEach((btn, i) => btn.classList.toggle('active', i === idx));
+        document.querySelectorAll('.section-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+        window.scrollTo({ top: document.querySelector('.section-nav').offsetTop - 20, behavior: 'smooth' });
+    },
+
+    generatePrompt() {
+        const composer = document.getElementById('genComposer').value.trim();
+        const title = document.getElementById('genTitle').value.trim();
+        const level = document.getElementById('genLevel').value.trim() || 'intermedi';
+        if (!composer || !title) { alert('Cal compositor i títol'); return; }
+
+        const prompt = `Genera una guia d'interpretació pianística detallada per a:
+
+Compositor: ${composer}
+Obra: ${title}
+Nivell del pianista: ${level}
+
+REGLA FONAMENTAL: Cada vegada que utilitzis una metàfora, imatge o descripció sonora, afegeix ENTRE PARÈNTESIS com es tradueix físicament al teclat. Exemple: "La melodia ha de cantar com una soprano lírica (augmenta el pes del braç sobre els dits 4-5 de la mà dreta, velocitat d'atac de tecla lenta, canell flexible com un amortidor)".
+
+Respon en format JSON amb aquesta estructura exacta:
+{
+  "piece": {
+    "composer": "...",
+    "title": "...",
+    "collection": "... o buit",
+    "key": "...",
+    "tempo": "...",
+    "meter": "...",
+    "difficulty": "...",
+    "duration": "...",
+    "style": "..."
+  },
+  "context": "Paràgraf HTML amb context històric i estilístic. Usa <strong> i <em>.",
+  "overview": {
+    "structure": "Descripció de l'estructura formal",
+    "challenges": ["Repte 1", "Repte 2", ...],
+    "generalTone": "To general de la interpretació"
+  },
+  "sections": [
+    {
+      "title": "Nom de la secció",
+      "subtitle": "Breu descripció evocadora",
+      "measures": "Compassos aproximats",
+      "markings": "Indicacions musicals",
+      "aspects": [
+        {
+          "type": "character|phrasing|rubato|dynamics|pedal|technique|tips",
+          "icon": "emoji adequat",
+          "name": "Nom de l'aspecte en català",
+          "content": "HTML amb <p>, <div class=\\"pract-block\\">, <span class=\\"pract\\"> per traduccions pràctiques, <strong>, <ul><li>"
+        }
+      ]
+    }
+  ],
+  "recordings": [
+    { "artist": "...", "album": "...", "note": "..." }
+  ],
+  "practiceStrategy": ["Pas 1 amb <strong>", "Pas 2...", ...]
+}
+
+Inclou 5-7 seccions amb 4-6 aspectes cadascuna. Cada aspecte SEMPRE amb traduccions pràctiques al teclat entre parèntesis o dins blocs .pract-block.
+Respon NOMÉS amb el JSON, sense text addicional.`;
+
+        document.getElementById('genPromptText').value = prompt;
+        document.getElementById('genPromptArea').classList.add('visible');
+        document.getElementById('genPasteArea').classList.add('visible');
+    },
+
+    copyPrompt() {
+        const text = document.getElementById('genPromptText').value;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = event.target;
+            btn.textContent = 'Copiat!';
+            setTimeout(() => btn.textContent = 'Copiar prompt', 2000);
+        });
+    },
+
+    importAIGuide() {
+        const text = document.getElementById('genPasteText').value.trim();
+        if (!text) { alert('Enganxa la resposta de Claude'); return; }
+        try {
+            let json = text;
+            if (json.startsWith('```')) {
+                json = json.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+            }
+            const guide = JSON.parse(json);
+            if (!guide.piece || !guide.sections) throw new Error('Format invàlid');
+            const key = (guide.piece.composer + '-' + guide.piece.title)
+                .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+            GUIDES[key] = guide;
+            this.saveGuides();
+            this.updateSelector();
+            this.loadGuide(key);
+            alert('Guia importada correctament!');
+        } catch(e) {
+            alert('Error parsejant el JSON: ' + e.message + '\nAssegura\'t que Claude ha respost amb JSON vàlid.');
+        }
+    },
+
+    saveGuides() {
+        const toSave = {};
+        for (const [k, v] of Object.entries(GUIDES)) {
+            if (k !== 'granados-vals-muy-lento') toSave[k] = v;
+        }
+        if (Object.keys(toSave).length) {
+            localStorage.setItem('interpretation-guides', JSON.stringify(toSave));
+        }
+    },
+
+    printGuide() {
+        window.print();
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => app.init());
+</script>
+
+</body>
+</html>
