@@ -498,6 +498,18 @@
             font-weight: 600;
         }
 
+        /* Measure-by-measure cards */
+        .mc { border-left: 3px solid var(--gold); background: rgba(255,170,0,0.03); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+        .mc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .mc-num { font: 700 0.7rem/1 'Inter', sans-serif; padding: 3px 8px; border-radius: 4px; background: var(--gold-dim); color: var(--gold); white-space: nowrap; flex-shrink: 0; }
+        .mc-title { font: 600 0.82rem/1.2 'Inter', sans-serif; color: var(--text-primary); }
+        .mc-body { padding-left: 4px; }
+        .mc-body p { margin: 3px 0; font-size: 0.82rem; line-height: 1.6; color: var(--text-secondary); }
+        .mc-body .mc-lbl { color: var(--gold); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .mc-body .mc-note { color: var(--practical); font-size: 0.8rem; }
+        .mc-sep { height: 1px; background: rgba(255,170,0,0.08); margin: 12px 0; }
+        .mc-group-title { font: 600 0.78rem/1 'Inter', sans-serif; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin: 16px 0 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,170,0,0.1); }
+
         /* Overview tab */
         .overview-grid {
             display: grid;
@@ -649,6 +661,64 @@ GUIDES['granados-vals-muy-lento'] = {
 <li><strong>Digitació de la melodia</strong>: respecta les digitacions de la partitura — estàn pensades per facilitar el legato. <span class="pract">el legato real es fa amb substitucions de dit silencioses: quan un dit ha de passar a la nota següent, el dit anterior no alça fins que el nou ja ha enfonsat la tecla</span></li>
 <li><strong>Tempo</strong>: Lento assai = molt lent. Negra ≈ 44-52. Si toques més ràpid, perds la qualitat meditativa. <span class="pract">posa el metrònom a 48, toca un cop sencer, i després apaga'l i toca de memòria la sensació de pols, no el clic exacte</span></li>
 </ul>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 1, Sistema 1</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.1</span> <span class="mc-title">Entrada del tema — el primer so ho defineix tot</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: La nota més aguda de tot el que sona és la melodia. Toca-la amb <strong>pes del braç complet</strong> canalitzat cap a aquell dit (digitació 2 segons la teva partitura). Les altres notes que sonen simultàniament a la mà dreta són acompanyament: toca-les <strong>40% més suaus</strong>, amb el dit sol sense pes de braç.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El <strong>baix</strong> del primer temps (dit 3): enfonsa fins a 2/3 de profunditat, <strong>mp</strong>, amb un pes moderat del braç. Immediatament després, alça el canell amb un gest ràpid d'escapament. Els <strong>acords del 2n i 3r temps</strong>: fantasmes, dits sols, <strong>pp</strong>, menys de meitat de profunditat de tecla. Són el "txi-txa" del vals, quasi inaudibles.</p>
+<p><span class="mc-lbl">PEDAL</span>: Avall <strong>just després</strong> del baix (no simultàniament — una fracció de segon després). Mantén tot el compàs.</p>
+<p><span class="mc-lbl">TIMING</span>: Cap rubato. Estableix el pols amb total calma. Abans de tocar: mans 15 cm sobre el teclat, inspira, deixa caure amb gravetat natural.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.2</span> <span class="mc-title">La melodia es desplega</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Segueix cantant la nota superior. Cada nota de melodia <strong>connecta amb la següent sense espai</strong>: el dit nou enfonsa la tecla <em>abans</em> que l'anterior alci. Les notes més agudes dins la frase reben lleugerament més pes que les més greus (la frase "puja").</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Mateix patró de vals que c.1. El baix pot ser una nota diferent però el gest físic és idèntic: mp al primer temps, pp fantasma als temps 2-3.</p>
+<p><span class="mc-lbl">PEDAL</span>: Canvi net al primer temps: alça ràpid just abans del baix, baixa just després.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.3</span> <span class="mc-title">La frase puja cap al punt culminant</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: La melodia s'acosta al punt més alt de la primera frase de 4 compassos. <strong>Augmenta progressivament el pes del braç</strong> un 15-20% respecte c.1-2. La nota més aguda d'aquest compàs rep el màxim pes de la frase: <strong>mf ple</strong>, palmell del dit (no punta), velocitat d'atac moderada per un so rodó.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Acompanya el creixement: el baix del primer temps pot ser un pel més present (mp+) però els temps 2-3 segueixen sent fantasmes.</p>
+<p><span class="mc-lbl">TIMING</span>: Lleugeríssima desacceleració cap al final del compàs (el temps 3 un 10% més llarg). Estem arribant al cim de la frase.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.4</span> <span class="mc-title">La frase baixa i respira</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Després del clímax, la melodia descendeix. <strong>Alleugereix el pes progressivament</strong>: el primer temps del compàs encara té pes, però a cada nota següent alça imperceptiblement el canell, creant un diminuendo natural. L'última nota de la frase arriba quasi a mp.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Segueix el diminuendo de la melodia. El baix una mica més suau que als compassos anteriors.</p>
+<p><span class="mc-lbl">TIMING</span>: L'últim temps del compàs pot ser un 15-20% més llarg — és la "respiració" entre la primera frase (pregunta) i la segona (resposta).</p>
+<p><span class="mc-lbl">PEDAL</span>: Alça completament al final del compàs per crear un breu instant de claredat entre les dues frases.</p>
+</div></div>
+
+<p class="mc-group-title">Pàgina 1, Sistema 2</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.5-6</span> <span class="mc-title">Segona frase (la resposta) — comença</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Nova frase — reprèn amb lleugerament <strong>menys pes</strong> que c.1 (la resposta és més delicada que la pregunta). La nota inicial de la frase marca el "re-inici": gest descendent del canell, contacte previ amb la tecla, atac suau. Després, construeix l'arc de la frase com als c.1-4 però amb un caràcter més íntim.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El baix reprèn el vals. Si la digitació indica canvi (dit 1 en lloc de 3), <strong>no canviïs el gest físic</strong>: el pes, la profunditat i l'escapament del canell són idèntics sigui quin sigui el dit.</p>
+<p><span class="mc-lbl">TIMING</span>: Torna al tempo original després de la respiració del c.4.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.7-8</span> <span class="mc-title">Segona frase — conclusió</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Tanques la frase. Si la melodia fa un salt ascendent cap a una nota aguda (digitació 5 o 1-2-3 següent), dona-li un <strong>micro-retard</strong> agògic: el dit es queda suspès sobre la tecla una fracció de segon abans d'enfonsar. La nota aguda arriba amb pes ple, com el punt final d'una oració.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: En el darrer temps del c.8: alleugereix el baix al màxim. Quasi desapareix per preparar la transició a la següent secció.</p>
+<p><span class="mc-lbl">TIMING</span>: Lleugeríssim rallentando al c.8, temps 3 — prepara el que vindrà. Però no tant com al c.4: la música continua, no para.</p>
+</div></div>`
                 }
             ]
         },
@@ -697,6 +767,53 @@ GUIDES['granados-vals-muy-lento'] = {
 <li>Practica la melodia sola de mà dreta cantant-la en veu alta (o taral·lejant) mentre toques. Si no pots cantar-la, no l'estàs frasejant prou. <span class="pract">canta la línia melòdica i escolta on respires naturalment — allà és on ha de respirar el piano</span></li>
 <li>Les digitacions marcades <strong>5/2, 5/3, 4/2</strong> indiquen passatges on la mà ha de cobrir intervals grans. <span class="pract">obre la mà amb calma, sense tensió al polze. Si l'interval és més gran del que la mà arriba còmodament, usa un legato de pedal: enfonsa el pedal per unir les notes i alça el dit anterior un instant abans d'arribar a la següent</span></li>
 </ul>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 1, Sistema 3</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.9-10</span> <span class="mc-title">Melodia al registre agut</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: La melodia puja al registre agut. <strong>Menys pes de braç que als c.1-8</strong> — les notes agudes vibren més i necessiten menys força per sonar amb cos. Usa 2/3 del pes que feies servir abans. El canell ha d'estar <strong>més alt</strong> per arribar a les tecles agudes sense tensar el colze. Assegura't que el colze segueix la mà cap a la dreta, no queda enganxat al cos.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Pot tenir salts més amples entre el baix i els acords. <strong>Mou tot el braç</strong> des de l'espatlla per als salts, no només la mà. El braç fa un arc suau entre les dues posicions.</p>
+<p><span class="mc-lbl">PEDAL</span>: Si la melodia té notes ràpides, el pedal ha de ser més curt o usar mig pedal per no embrutir.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.11-12</span> <span class="mc-title">Ornaments expressius</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Si hi ha grupets o mordents, toca'ls <strong>abans del temps</strong>, no sobre el temps. El dit que fa l'ornament: <strong>dit sol, zero pes de braç</strong>, moviment de dit pur des de la falangeta. La <strong>nota principal</strong> que ve després de l'ornament: aquesta sí que rep pes de braç complet. L'ornament és el respir, la nota principal és la paraula.</p>
+<p><span class="mc-lbl">TIMING</span>: L'ornament "roba" temps de la nota anterior (no de la nota que orna). Així la nota principal arriba exactament al temps.</p>
+</div></div>
+
+<p class="mc-group-title">Pàgina 1, Sistemes 4-5</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.13-16</span> <span class="mc-title">Intensitat creixent — digitacions 5/3, 5/2</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Les digitacions 5/3 i 5/2 indiquen que has de mantenir dues notes simultàniament amb una mà. La nota superior (dit 5) és melodia: <strong>pes de braç concentrat al dit 5</strong>. La nota inferior (dit 3 o 2) és veu interior: <strong>dit sol, pp</strong>, menys de meitat de profunditat. Imagina que el dit 5 "pesa" i els altres "floten".</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El baix segueix donant fonament. Si la melodia creix en intensitat, el baix pot crèixer una mica també (de p a mp), però mai arribar al nivell de la melodia.</p>
+<p><span class="mc-lbl">TIMING</span>: Construeix lleugerament la tensió. Cada compàs una mica més "endavant" que l'anterior — no més ràpid, sinó més directe i decidit.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.17-18</span> <span class="mc-title">"Petit gest canell" — passatge ornamental</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Aquí està el teu apunt "petit gest canell / evitar encallar-se". El passatge té grups de notes ràpides que necessiten fluïdesa. <strong>El canell fa un petit cercle</strong> (no un moviment recte) que "llança" els dits sobre les tecles. Cada grup de notes ràpides = UN sol gest del canell, no múltiples moviments de dits independents. Practica el grup com un gest únic i ràpid des del principi, després refina la precisió.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Segueix el pols bàsic del vals amb estabilitat, donant un "terra" sobre el qual la mà dreta pot volar lliurement.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.19-20</span> <span class="mc-title">rit. — tancament de la secció</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">AMBDUES MANS</span>: El ritardando es distribueix en 3-4 temps. <strong>No alenteixis de cop al primer temps!</strong> Comença el rallentando al tercer temps del c.19, i fes cada temps següent un 15% més llarg. L'últim temps del c.20 pot durar el doble.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: Acompanya el rit. amb un diminuendo natural: alleugereix el pes del braç progressivament. L'última nota de la secció arriba a <strong>p</strong>.</p>
+<p><span class="mc-lbl">PEDAL</span>: Mantén durant el rit. per envoltir el so. Alça completament després de l'última nota — crea un instant de silènci net abans de la següent secció.</p>
+<p><span class="mc-lbl">COS</span>: Esquena lleugerament cap enrere, espatlles baixen 2 cm. El rit. no és només temporal — és físic.</p>
+</div></div>`
                 }
             ]
         },
@@ -734,6 +851,45 @@ GUIDES['granados-vals-muy-lento'] = {
                     name: 'Pedal',
                     content: `<p>En els sf, el pedal és més curt i canvia més sovint per mantenir claredat. <span class="pract">en compàs amb sf: pedal avall amb el sf, alça al segon temps, torna a baixar al tercer si cal ressonància. Si hi ha dos sf seguits, canvia pedal amb cada un per evitar acumulació</span></p>
 <p>Si la harmonia canvia ràpidament, usa <strong>mig pedal</strong>: alça només fins a la meitat. <span class="pract">el peu alça el pedal fins que notes la resitència a la meitat del recorregut. Això neteja les freqüències greus (que embruteixen) però manté les agudes (que donen brillantor)</span></p>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 2, Sistema 1</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.21</span> <span class="mc-title">Primer sf — el contrast</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">PREPARACIÓ</span>: Després del rit. anterior, un <strong>instant de silènci absolut</strong>. Alça el pedal, mans suspeses a 10 cm. Respira. El canvi de caràcter comença aquí.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: La nota/acord amb sf es toca amb <strong>atac ràpid</strong> (alta velocitat d'enfonsar la tecla) però el canell <strong>rebota cap amunt immediatament</strong> després de l'impacte, com una pilota. No deixes el pes després del sf — si ho fas, sonarà brutal en lloc d'expressiu. Les notes que segueixen l'sf tornen a mf base: transició instantània, no gradual.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El baix ha de ser <strong>ferm i present</strong> (mf, tecla al fons) per donar suport al drama. Els acords dels temps 2-3 encara són més suaus però no tant fantasmes com a la secció A — ara són mp.</p>
+<p><span class="mc-lbl">PEDAL</span>: Avall amb el sf, canvi al següent temps fort.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.22-23</span> <span class="mc-title">"Agafar la tecla" — sf amb grip</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: La teva anotació "agafar la tecla" és clau. Diferent de l'sf rebot del c.21, aquí: <strong>el dit baixa ràpid fins al fons de la tecla i S'HI QUEDA un instant</strong> (com agafar un objecte amb decisió). Mantén el dit al fons durant mig temps, després allibera el pes gradualment. El so és més sosté i intens que el rebot.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Les notes de suport harmònic: fermes però no tan fortes com la melodia. <strong>mf</strong>, tecla al fons, pes de braç moderat.</p>
+<p><span class="mc-lbl">TIMING</span>: Més rítmic i directe que la secció anterior. Menys rubato, més impuls.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.24-26</span> <span class="mc-title">"ti/ri/ti/ri ti" — notes ràpides</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: El patró rítmic que has anotat. Cada nota ràpida: <strong>dit sol, zero pes de braç</strong>, moviment mínim del dit (1 cm d'alçada màxima). Substitució de dits (3-2-1 o 4-3-2) si són notes repetides, <strong>mai el mateix dit repetit</strong>. El canell està completament relaxat i lleugerament alt. Cada nota ha de sonar al <strong>mateix volum</strong> (p, uniforme) — si una nota surt més forta, aquell dit està fent massa força.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Mantén el pols del vals com a ancla. El baix ha de ser estable i clar perquè la mà dreta pugui volar per sobre.</p>
+<p><span class="mc-lbl">PRÀCTICA</span>: Primer: toca el patró molt lent amb alçament exagerat de dits (3 cm). Després: accelera fins que els dits quasi no s'alcen. El so ha de ser perlat i regular.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.27-28</span> <span class="mc-title">Transició cap a la secció lírica</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">AMBDUES MANS</span>: L'energia dramàtica es va dissolent. <strong>Diminuendo gradual</strong> dels sf (f → mf → mp) en 2 compassos. El canvi no és sobtat: cada sf successiu és un pel menys intens.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: La melodia torna a cantar, deixant enrere el caràcter percussiu. Transició d'atac ràpid a atac lent (de sf a cantabile). La velocitat d'enfonsar la tecla es redueix gradualment.</p>
+<p><span class="mc-lbl">PEDAL</span>: Al c.28, el pedal pot ser més generós (mantén més temps) per suavitzar la transició.</p>
+</div></div>`
                 }
             ]
         },
@@ -785,6 +941,53 @@ GUIDES['granados-vals-muy-lento'] = {
 <li>Escolta <strong>Alicia de Larrocha</strong> tocant qualsevol Granados — ella tenia la combinació perfecta de llibertat i control. Fixa't com les frases <em>respiren</em>. <span class="pract">escolta amb els ulls tancats i mou les mans sobre la taula imitant els seus gestos. Després intenta reproduir les mateixes sensacions al piano</span></li>
 <li>Les notes de pas (notes que connecten una nota important amb la següent) han de ser lleugeres. <span class="pract">les notes de pas es toquen amb menys enfonament de tecla (1/2 a 2/3 de profunditat) i sense pes de braç. Són el fil que connecta les perles, no les perles</span></li>
 </ul>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 2, Sistemes 3-4 / Pàgina 3</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.29-30</span> <span class="mc-title">Entrada al cor líric — "Sol"</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Has anotat "Sol" — aquesta nota és un punt d'ancoratge harmònic. Toca-la amb <strong>pes de braç ple, palmell del dit</strong>, deixant-la ressonar dins el pedal. Les notes al voltant del Sol són decoració — toca-les amb dit sol, pp, com una aurèola al voltant de la nota principal.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Comença el nou caràcter d'acompanyament. "Acompanyar amb direcció per sobre": si la melodia puja, els acords d'acompanyament creixen una mica (de pp a p). Si la melodia baixa, l'acompanyament també decreix. <strong>Segueix la melodia com una ombra</strong>, mai independent.</p>
+<p><span class="mc-lbl">PEDAL</span>: Generós per crear calidesa. Canvis nets però no secs — solapament mínim entre pedal antic i nou.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.31-34</span> <span class="mc-title">Tres capes de so — voicing màxim</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Aquí has de tocar DUES veus amb una mà. <strong>Nota superior</strong> (melodia, normalment dit 4-5): mf, pes de braç concentrat en aquell dit. Inclina la mà lleugerament cap al dit 5 perquè el pes caigui naturalment cap allà. <strong>Nota inferior</strong> (veu interior, normalment dit 1-2): pp, dit sol, meitat de profunditat. El polze espécialment ha de ser MOLT lleuger — el polze tendeix a ser massa fort per la seva posició natural.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El baix (dit 5): mp, ferm i sostingut. Funciona com el pedal d'un orgue — constant, present, sense fluctuacions. Els acords superiors de la mà esquerra: p, dits sols.</p>
+<p><span class="mc-lbl">PRÀCTICA</span>: Toca les tres capes per separat (1. melodia sola ff, 2. baix sol mp, 3. veus interiors soles pp). Després ajunta de 2 en 2. Finalment les 3 juntes mantenint proporcions.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.35-38</span> <span class="mc-title">"La", "Re" — notes ancla</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Les notes que has marcat ("La", "Re") són <strong>pilars estructurals</strong>. Cada una rep: (1) un <strong>micro-retard</strong> abans d'arribar (el dit es queda suspès 1/4 de temps extra), (2) <strong>pes màxim</strong> de la frase en aquell punt, (3) <strong>pedal fresc</strong> que les deixa ressonar. Són com les paraules clau d'una oració — les que l'oient ha de recordar.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Acompanya amb direcció. Les notes ancla de la melodia coincidiran amb harmonies importants al baix. Dona una mica més pes al baix en aquests moments per reforçar l'ancoratge harmònic.</p>
+<p><span class="mc-lbl">RUBATO</span>: Màxima llibertat aquí. Alenteix abans de cada nota ancla, avança lleugerament després. Però recorda: el que robes, ho tornes. El compàs sencer ha de durar aproximadament el mateix que amb metrònom.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.39-42</span> <span class="mc-title">molto espress. — el clímax líric</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: El punt de màxima expressió de tota la peça. <strong>Velocitat d'atac variada</strong>: notes tendres amb atac lent (el dit enfonsa com enfonsant sorra), notes apasionades amb atac més ràpid (però mai percussiu). <strong>Legato profund</strong>: les tecles es <strong>solapen</strong> lleugerament — el dit nou enfonsa mentre l'anterior encara està a baix, creant una micro-superposició de 1/16 de temps.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Respira amb la melodia. Si la melodia s'atura en una nota llarga, l'acompanyament també es quieta. Si la melodia corre, l'acompanyament la segueix lleugerament.</p>
+<p><span class="mc-lbl">COS</span>: Tot el cos està implicat. El tronc es balanceja lleugerament endavant en les notes fortes, enrere en les suaus. No és exageració teatral — és el pes del cos que ajuda a canalitzar el pes del braç.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.43-46</span> <span class="mc-title">Alla CODA — preparació del retorn</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">AMBDUES MANS</span>: La indicació "Alla CODA" és un senyal estructural. La música comença a "tancar" la secció lírica. <strong>Diminuendo gradual</strong> del molto espress. cap a un caràcter més neutre.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: Redueix progressivament el pes del braç i la variació d'atac. De mf apasionat a mp tranquil en 2-3 compassos. Les frases es fan més curtes i regulars.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: L'acompanyament torna a ser més estable i regular, menys "respirant".</p>
+<p><span class="mc-lbl">PEDAL</span>: Canvis més regulars, menys solapament. Preparem netedat per la següent secció.</p>
+</div></div>`
                 }
             ]
         },
@@ -822,6 +1025,52 @@ GUIDES['granados-vals-muy-lento'] = {
                     content: `<p>En passatges amb acords densos i salts: la precisió ve de la <strong>preparació</strong>, no de la velocitat del salt.</p>
 <div class="pract-block"><strong>Salts d'acords</strong>: mentre toquen els dits en una posició, la ment ja ha d'estar "veient" la posició següent. Practica els salts en càmera lenta: toca l'acord, alça la mà lentament, visualitza la posició següent, col·loca la mà per sobre sense tocar, i després enfonsa. Augmenta la velocitat progressivament.<br><br>
 <strong>Acords fortíssim</strong>: el pes ve de tota la part superior del cos. Colzes oberts (no enganxats al cos), esquena recta, i una sensació de "prémer cap avall" des de les espatlles. No tensis les mans: els dits estan ferms per aguantar la forma de l'acord, però el canell i l'avantbraç estan relaxats.</div>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 3, Sistemes finals / Pàgina 4, Sistema 1</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.47-48</span> <span class="mc-title">Transició a Poco più vivo</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">AMBDUES MANS</span>: L'acceleració comença <strong>aquí</strong>, no al primer compàs del Poco più vivo. En 2 compassos, augmenta el tempo un 5-8%. L'efecte ha de ser "la música pren vida a poc a poc", no un salt sobtat.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: La melodia es torna més rítmica i directa. Menys rubato, més impulsió. L'atac passa de cantabile pur a cantabile amb més articulació.</p>
+<p><span class="mc-lbl">DINÀMICA</span>: Crescendo gradual de mp a mf en preparació del f que vindrà.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.49-52</span> <span class="mc-title">Poco più vivo — establiment</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Melodia a <strong>f</strong>. Pes de braç complet des de l'espatlla, però velocitat d'atac <strong>moderada</strong>. El f ha de sonar rodó i ple, com una veu de tenor que projecta sense cridar. Si sona dur o metàl·lic: (1) alenteix l'atac de la tecla, (2) afegeix més pes de braç, (3) verifica que el canell està relaxat.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El vals ara és més present i enèrgic. El baix: <strong>mf</strong>, tecla al fons amb fermesa. Els acords dels temps 2-3: <strong>mp</strong> (no fantasmes com al principi — ara són part activa del ritme).</p>
+<p><span class="mc-lbl">TIMING</span>: Negra ≈ 52-56. Pols més ferm, menys rubato. El metrònom podria ser una guia útil per establir el nou tempo.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.53-58</span> <span class="mc-title">Accents expressius (&gt;)</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Les notes amb accent (&gt;): surten <strong>20-30% per sobre</strong> del nivell base de f. Es fan amb una <strong>lleugera acceleració de l'atac</strong> + un pel més de pes, però <strong>sense el rebot del canell</strong> (això és el que distingeix l'accent del sf). L'accent és un èmfasi, no un cop. La nota accentuada dura tot el seu valor — no s'escurça.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El baix manté estabilitat. No accentuïs la mà esquerra tret que la partitura ho marqui explícitament. El baix és l'ancla rítmica, els accents són melodia.</p>
+<p><span class="mc-lbl">PEDAL</span>: Canvis nets a cada compàs o cada dos temps si la harmonia canvia. En passatges accentuats, pedal més curt per mantenir articulació.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.59-62</span> <span class="mc-title">Construcció cap al clímax</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Intensitat progressiva. Cada compàs un pel més intens (més pes, més atac, més presència). La nota més aguda de tota aquesta secció és el clímax absolut: <strong>ff, pes de tot el cos</strong> (inclòs les espatlles i l'esquena), atac decidit però no violent.</p>
+<p><span class="mc-lbl">COS</span>: Lleuger moviment endavant del tronc durant la construcció. Al clímax, tot el pes es projecta cap avall a través dels braços.</p>
+<p><span class="mc-lbl">TIMING</span>: La intensitat crea una lleugera sensació d'acceleració natural. No resisteixis — deixa que el tempo augmenti un 5% més.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.63-66</span> <span class="mc-title">rall. → D.C. senza replica</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Després del clímax, la indicació "rall." i després "D.C. senza replica" (torna al principi sense repeticions). <strong>El rall. es distribueix en 3-4 temps</strong>: cada temps 15-20% més llarg que l'anterior. L'últim temps pot durar el doble.</p>
+<p><span class="mc-lbl">DINÀMICA</span>: Diminuendo durant el rall. — del f fins a mf. No arribar a p — has de tornar al mf del tema principal.</p>
+<p><span class="mc-lbl">TRANSICIÓ</span>: Després de l'última nota: alça el pedal completament. <strong>Pausa de 2-3 segons</strong> amb les mans immòbils sobre el teclat, respirant. Després, reprèn el tema com al c.1 (però sense les repeticions). El retorn ha de sonar com "i torna el record", no com "tornem a començar".</p>
+</div></div>`
                 }
             ]
         },
@@ -873,6 +1122,57 @@ GUIDES['granados-vals-muy-lento'] = {
 <li><strong>L'error més comú</strong>: arribar al final amb pressa o amb tensió. La Coda ha de ser el moment més relaxat de tota la peça — físicament i musicalment. <span class="pract">abans de la Coda, fes una micro-pausa, relaxa conscientemente les espatlles (baixa-les 2 cm), desbloqueja els colzes, i entra a la Coda com si flotessis</span></li>
 <li><strong>Després de l'última nota</strong>: NO moguis les mans. No tossis. No miris el públic (o el gat). La peça no acaba quan l'última nota sona — acaba quan el silènci després d'ella s'ha complet. <span class="pract">compta mentalment 4 temps de silènci al tempo del Lento després del calderón. Després retira les mans lentament cap a la falda</span></li>
 </ul>`
+                },
+                {
+                    type: 'measures',
+                    icon: '🎹',
+                    name: 'Compàs a Compàs',
+                    content: `<p class="mc-group-title">Pàgina 4, Sistema 2 (CODA)</p>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.67</span> <span class="mc-title">"meno" — menys, de cop</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">PREPARACIÓ</span>: El D.C. senza replica ha tornat al tema i ha recorregut tota la peça sense repeticions. Ara arribes al senyal de CODA. <strong>Micro-pausa</strong> abans d'entrar: relaxa espatlles (baixa-les 2 cm), desbloqueja colzes, inspira.</p>
+<p><span class="mc-lbl">AMBDUES MANS</span>: Canvi immediat de caràcter. "Meno" = menys de tot: menys volum, menys velocitat, menys tensió física. Dinàmica: baixa de mf a <strong>mp instantàniament</strong>. Pes del braç: passa de braç complet a <strong>només avantbraç</strong>. El braç superior està relaxat, penjant.</p>
+<p><span class="mc-lbl">TIMING</span>: Tempo més lent que el Poco più vivo però encara no tan lent com serà. Negra ≈ 44-46.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.68-69</span> <span class="mc-title">"sempre dim." — la línia descendent comença</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: Cada compàs ha de ser <strong>imperceptiblement més suau</strong> que l'anterior. No és un diminuendo "en escaló" — és una pendent contínua i suau. El pes va reduint-se: avantbraç → mà sola. La melodia encara canta, però cada vegada més com un xiuxiueig.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El vals es converteix en un <strong>fantasma del vals</strong>. El baix: <strong>p</strong>, dit sol, 1/2 profunditat. Els temps 2-3: <strong>ppp</strong>, quasi no es toquen — el dit apenas rossa la tecla, que baixa només uns mil·límetres.</p>
+<p><span class="mc-lbl">PEDAL</span>: Mig pedal: alça només fins a la meitat del recorregut per crear una aurèola difusa sense embrutir.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.70</span> <span class="mc-title">"Lento" — el temps s'atura</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">TIMING</span>: Redueix el tempo un <strong>20-25% més</strong> respecte al que ja portaves (negra ≈ 34-38). Cada temps és ara un respir sencer. No comptis — sent cada pulsació com un bateig del cor en repòs.</p>
+<p><span class="mc-lbl">MÀ DRETA</span>: Pes: només la mà, l'avantbraç està quasi suspès. La melodia és un fil de veu. Atac: el dit ja toca la superfície de la tecla <strong>abans</strong> d'enfonsar (zero espai d'aire). L'enfonament és lentíssim.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: Mínim absolut. El baix pot desaparèixer quasi completament. Si la partitura ho permet, toca només el primer temps de cada compàs, deixant els temps 2-3 en silènci real.</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.71</span> <span class="mc-title">pp — el so mínim amb màxima qualitat</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">MÀ DRETA</span>: El pp NO és "tocar fluixet". És tocar amb la mateixa qualitat però volum mínim. Protocol físic:<br>
+1. <strong>Contacte previ</strong>: dit toca superfície de tecla, zero aire.<br>
+2. <strong>Velocitat lenta</strong>: la tecla baixa com un globus enfonsant-se en aigua.<br>
+3. <strong>Profunditat 1/3</strong>: la tecla només baixa un terç del recorregut total.<br>
+4. <strong>Pes mínim</strong>: només el pes del dit i una mica de mà. El canell està <strong>alt</strong>, la mà penja dels dits com una cortina lleugera.<br>
+5. <strong>Escoltar</strong>: el pp requereix MÉS concentració auditiva que el f. Escolta cada nota individualment.</p>
+<p><span class="mc-lbl">MÀ ESQUERRA</span>: El mateix protocol. El baix i els acords són quasi inaudibles però <strong>presents</strong> — la diferència entre no tocar i tocar pp és que el pp crea una vibraçió mínima que l'oient "sent" sense "escoltar".</p>
+</div></div>
+
+<div class="mc">
+<div class="mc-head"><span class="mc-num">c.72-73</span> <span class="mc-title">rall. + calderó — dissolució final</span></div>
+<div class="mc-body">
+<p><span class="mc-lbl">TIMING</span>: Cada temps <strong>20-30% més llarg</strong> que l'anterior. La sensació és de temps que s'espesseix, com mel. L'últim temps abans del calderón pot durar el doble del seu valor escrit.</p>
+<p><span class="mc-lbl">L'ÚLTIMA NOTA/ACORD</span>: Amb calderón (\U0001d710). Mantén <strong>com a mínim el triple</strong> del valor escrit. L'atac és el més suau de tota la peça: contacte previ, velocitat mínima, profunditat 1/4 de tecla. Escoltar com el so neix, viu, i <strong>s'apaga sol</strong>. No tallis la nota.</p>
+<p><span class="mc-lbl">PEDAL</span>: Mantén el pedal mentre el so s'extingeix. No l'alçis fins que <strong>el silènci hagi substituït completament el so</strong>. Llavors, alça molt lentament (2 segons per pujar el pedal).</p>
+<p><span class="mc-lbl">DESPRÉS</span>: <strong>No moguis res.</strong> Mans immòbils sobre el teclat. Compta mentalment 4 temps de silènci al tempo del Lento. El silènci després de l'última nota és part de la peça — l'oient (o tu) necessita temps per "tornar" de l'experiència. Després d'aquests 4 temps, retira les mans <strong>molt lentament</strong> cap a la falda.</p>
+</div></div>`
                 }
             ]
         }
